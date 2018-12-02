@@ -1,0 +1,433 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Security-Policy" content="default-src'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+        <meta name="format-detection" content="telephone=no">
+        <meta charset="UTF-8" />
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Cordova API -->
+        <script type="text/javascript" src="cordova.js"></script>
+
+        <!-- jQuery Mobile stylesheets -->
+        <link href="jquerymobile/jquery.mobile-1.4.5.css" rel="stylesheet" type="text/css"/>
+
+        <!-- jQuery library -->
+        <script type="text/javascript" src="jquerymobile/demos/js/jquery.js"></script>
+
+        <!-- jQuery Mobile library -->
+        <script type="text/javascript" src="jquerymobile/demos/js/jquery.mobile-1.4.5.js"></script>
+
+        <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
+        
+        <style type="text/css">
+		.ui-page {
+    	background: transparent url(https://mobileapp12.000webhostapp.com/background.png);
+		}
+		</style>
+
+        
+    </head>
+    <body>
+
+   
+        <!-- Start of Home page -->
+        <div data-role="page" id="home">
+        
+            <div data-role="header">
+   
+
+                    <h1>Dachi App</h1>
+                    
+
+            </div>
+      
+
+            <div role="main" class="ui-content">
+                    <a href="#new" class="ui-btn ui-icon-plus ui-btn-icon-left">Book Class</a>
+                    <br>
+                    <a href="#schedule" class="ui-btn ui-icon-alert ui-btn-icon-left">Class Schedule</a> 
+                    <br>
+                    <a href="#karate" class="ui-btn ui-icon-check ui-btn-icon-left">Karate Ebook</a> 
+                    <br>
+                    <a href="#location" class="ui-btn ui-icon-search ui-btn-icon-left">Location</a>
+                    <br>
+                    <a href="#share" class="ui-btn ui-icon-heart ui-btn-icon-left">Share</a>
+                    <br>
+                    <a href="#signout" class="ui-btn ui-icon-alert ui-btn-icon-left">Sign Out</a>
+            </div>
+
+            <div data-role="footer">
+                    <div class="ui-field-contain" align="center">
+                        <h4>Any question,please contact us</h4>
+                    <a href="#contact" class="ui-btn ui-icon-info ui-btn-icon-left">Contact Us</a>
+                    </div>
+                </div>
+         
+        </div>
+
+
+
+        <!-- Start of Class Schedule -->
+        <div data-role="page" id="schedule">
+                <div data-role="header">
+                        <a href="#home" class="ui-btn ui-icon-home ui-btn-icon-left">Home</a>
+                        <h1>Class Schedule</h1>
+                </div>
+                <br>
+                <div role="main" class="ui-content">
+                        <div class="ui-field-contain" align="center">
+                        <ol data-role="listview" id="liststudent" data-theme="a"> </ol>
+                        </div>
+                    </div>
+                    <div data-role="footer">
+                            <div class="ui-field-contain" align="center">
+                                <h4>Dachi App</h4>
+                            </div>
+                        </div>
+        </div>
+
+         <!-- Start of Karate Ebook -->
+         <div data-role="page" id="karate">
+                <div data-role="header">
+                        <a href="#home" class="ui-btn ui-icon-home ui-btn-icon-left">Home</a>
+                        <h1>Karate Ebook</h1>
+                </div>
+                <div role="main" class="ui-content">
+                        <div class="ui-field-contain" align="center">
+                                <div role="main" class="ui-content">
+                                        <a href="https://mobileapp12.000webhostapp.com/white.pdf" class="ui-btn ui-icon-check ui-btn-icon-left">White Belt</a> 
+                                        <br>
+                                        <a href="https://mobileapp12.000webhostapp.com/yellow.pdf" class="ui-btn ui-icon-check ui-btn-icon-left">Yellow Belt</a> 
+                                        <br>
+                                        <a href="https://mobileapp12.000webhostapp.com/green.pdf" class="ui-btn ui-icon-check ui-btn-icon-left">Green Belt</a> 
+                                        <br>
+                                        <a href="https://mobileapp12.000webhostapp.com/blue.pdf" class="ui-btn ui-icon-check ui-btn-icon-left">Blue Belt</a> 
+                                        <br>
+                                        <a href="https://mobileapp12.000webhostapp.com/red.pdf" class="ui-btn ui-icon-check ui-btn-icon-left">Red Belt</a> 
+                                        <br>
+                                        <a href="https://mobileapp12.000webhostapp.com/black.pdf" class="ui-btn ui-icon-check ui-btn-icon-left">Black Belt</a> 
+                                        <br>
+                                </div>
+                        </div>
+                </div>
+                <div data-role="footer">
+                        <div class="ui-field-contain" align="center">
+                            <h4>Dachi App</h4>
+                        </div>
+                    </div>
+            </div>
+    
+        <!-- Start of Location -->
+        <div data-role="page" id="location">
+                <div data-role="header">
+                        <a href="#home" class="ui-btn ui-icon-home ui-btn-icon-left">Home</a>
+                        <h1>Location</h1>
+                </div>
+                <br>
+                <br>
+                <div role="main" class="ui-content">
+                        <div class="ui-field-contain" align="center">
+                                <div id="googleMap" style="height:400px;filter:grayscale(90%);-webkit-filter:grayscale(90%);"></div>
+                                <script src="https://maps.googleapis.com/maps/api/js"></script>
+                                <script>
+                                var myCenter = new google.maps.LatLng(3.133, 101.5537);
+                                var myCenter1 = new google.maps.LatLng(3.157, 101.7424);
+                                var myCenter2 = new google.maps.LatLng(3.255, 101.7354);
+                                    
+                                function initialize() {
+                                    var mapProp = {
+                                    center: myCenter,
+                                    center1: myCenter1,
+                                    center2: myCenter2,
+                                    zoom: 12,
+                                    scrollwheel: false,
+                                    draggable: false,
+                                    mapTypeId: google.maps.MapTypeId.ROADMAP
+                                };
+                                    
+                                var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+                                    
+                                var marker = new google.maps.Marker({
+                                    position: myCenter,
+                                });
+                                    
+                                marker.setMap(map);
+                                }
+                                    
+                                google.maps.event.addDomListener(window, 'load', initialize);
+                                </script>
+                                  </div>
+                        </div>
+                        <div data-role="footer">
+                                <div class="ui-field-contain" align="center">
+                                    <h4>Dachi App</h4>
+                                </div>
+                            </div>
+                </div>
+            </div>
+
+        <!-- Start of Share -->
+        <div data-role="page" id="share">
+                <div data-role="header">
+                        <a href="#home" class="ui-btn ui-icon-home ui-btn-icon-left">Home</a>
+                        <h1>Share</h1>
+                </div>
+                <br>
+                <br>
+                <div role="main" class="ui-content">
+                        <div class="ui-field-contain" align="center">
+                <!-- Email -->
+                <a href="mailto:?Subject=Simple Share Buttons&amp;Body=I%20saw%20this%20and%20thought%20of%20you!%20 https://simplesharebuttons.com">
+                    <img src="https://simplesharebuttons.com/images/somacro/email.png" alt="Email" />
+                </a>
+             
+                <!-- Facebook -->
+                <a href="http://www.facebook.com/sharer.php?u=https://simplesharebuttons.com" target="_blank">
+                    <img src="https://simplesharebuttons.com/images/somacro/facebook.png" alt="Facebook" />
+                </a><br>
+                
+                <!-- Google+ -->
+                <a href="https://plus.google.com/share?url=https://simplesharebuttons.com" target="_blank">
+                    <img src="https://simplesharebuttons.com/images/somacro/google.png" alt="Google" />
+                </a>
+                
+                <!-- LinkedIn -->
+                <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://simplesharebuttons.com" target="_blank">
+                    <img src="https://simplesharebuttons.com/images/somacro/linkedin.png" alt="LinkedIn" />
+                </a><br>
+                
+                <!-- Pinterest -->
+                <a href="javascript:void((function()%7Bvar%20e=document.createElement('script');e.setAttribute('type','text/javascript');e.setAttribute('charset','UTF-8');e.setAttribute('src','http://assets.pinterest.com/js/pinmarklet.js?r='+Math.random()*99999999);document.body.appendChild(e)%7D)());">
+                    <img src="https://simplesharebuttons.com/images/somacro/pinterest.png" alt="Pinterest" />
+                </a>
+              
+                <!-- Reddit -->
+                <a href="http://reddit.com/submit?url=https://simplesharebuttons.com&amp;title=Simple Share Buttons" target="_blank">
+                    <img src="https://simplesharebuttons.com/images/somacro/reddit.png" alt="Reddit" />
+                </a><br>
+                
+                <!-- Tumblr-->
+                <a href="http://www.tumblr.com/share/link?url=https://simplesharebuttons.com&amp;title=Simple Share Buttons" target="_blank">
+                    <img src="https://simplesharebuttons.com/images/somacro/tumblr.png" alt="Tumblr" />
+                </a>
+                 
+                <!-- Twitter -->
+                <a href="https://twitter.com/share?url=https://simplesharebuttons.com&amp;text=Simple%20Share%20Buttons&amp;hashtags=simplesharebuttons" target="_blank">
+                    <img src="https://simplesharebuttons.com/images/somacro/twitter.png" alt="Twitter" />
+                </a><br>
+                        </div>
+                </div>
+                <div data-role="footer">
+                        <div class="ui-field-contain" align="center">
+                            <h4>Dachi App</h4>
+                        </div>
+                    </div>
+            </div>
+
+        <!-- Start of Contact Us -->
+        <div data-role="page" id="contact">
+                <div data-role="header">
+                        <a href="#home" class="ui-btn ui-icon-home ui-btn-icon-left">Home</a>
+                        <h1>Contact Us</h1>
+                </div>
+                <div role="main" class="ui-content">
+                        <div class="ui-field-contain" align="center">
+                                <style>
+                                        input[type=text], select, textarea {
+                                            width: 100%;
+                                            padding: 12px;
+                                            border: 1px solid #ccc;
+                                            border-radius: 4px;
+                                            box-sizing: border-box;
+                                            margin-top: 6px;
+                                            margin-bottom: 16px;
+                                            resize: vertical;
+                                        }
+                                        
+                                        input[type=submit] {
+                                            background-color: #4CAF50;
+                                            color: white;
+                                            padding: 12px 20px;
+                                            border: none;
+                                            border-radius: 4px;
+                                            cursor: pointer;
+                                        }
+                                        
+                                        input[type=submit]:hover {
+                                            background-color: #45a049;
+                                        }
+                                        
+                                        .container {
+                                            border-radius: 0px;
+                                            background-color: #f2f2f2;
+                                            padding: 10px;
+                                        }
+                                        </style>
+                        
+                                    <div class="container">
+                                      <form action="mailto:dachiapp@gmail.com" method="post" enctype="text/plain">
+                                        Name:<br>
+                                        <input type="text" name="name"><br>
+                                        E-mail:<br>
+                                        <input type="text" name="mail"><br>
+                                        Comment:<br>
+                                        <input type="text" name="comment" size="50"><br><br>
+                                        <input type="submit" value="Send">
+                                        <input type="reset" value="Reset">
+                                        </form>
+                                      </form>
+                                    </div>  
+                            </body>
+                        </div>
+                </div>
+                <div data-role="footer">
+                        <div class="ui-field-contain" align="center">
+                            <h4>Dachi App</h4>
+                        </div>
+                    </div>
+            </div>
+       
+
+        <!-- Start of New Record page -->
+        <div data-role="page" id="new">
+            <div data-role="header">
+                <a href="#home" class="ui-btn ui-icon-home ui-btn-icon-left">Home</a>
+
+                    <h1>Class Booking</h1>
+            </div>
+
+            <div role="main" class="ui-content">
+                <div class="ui-field-contain" align="center">
+                    <form id="newrecord">
+
+                        <select name="name" id="name" data-mini="true">
+                                <option value="None">Class Type</option>
+                                <option value="Kumite">Kumite</option>
+                                <option value="Kata">Kata</option>
+                                <option value="Dojo">Dojo</option>
+                            </select>
+                        
+                        <select name="level" id="level" data-mini="true">
+                            <option value="None">Level</option>
+                            <option value="Children">Kid age(7-12)</option>
+                            <option value="Teenager">Teenagers age(18-23)</option>
+                            <option value="Adult">Adult age(24 & Above)</option>
+                        </select>
+                        <br>
+
+                        <select name="status" id="status" data-mini="true">
+                            <option value="None">Status</option>
+                            <option value="Sifu">Sifu</option>
+                            <option value="Student">Student</option>
+                        </select>
+                        <br>
+                        Date
+                        <input type="date" data-clear-btn="true" data-mini="true" name="date" id="date" value="" placeholder="Date:"><br>
+                        <script>
+                            var options = {
+                                date: new Date(),
+                                mode: 'date'
+                            };
+                             
+                            function onSuccess(date) {
+                                alert('Selected date: ' + date);
+                            }
+                             
+                            function onError(error) { // Android only 
+                                alert('Error: ' + error);
+                            }
+                             
+                            datePicker.show(options, onSuccess, onError);
+                        </script>
+
+                    <select name="time" id="time" data-mini="true">
+                        <option value="None">Time</option>
+                        <option value="Morning ( 9 A.M )">Morning (9-10 A.M)</option>
+                        <option value="Afternoon ( 5 P.M )">Evening (5-6 P.M)</option>
+                        <option value="Night (9 P.M )">Night (9-10 P.M)</option>
+                    </select><br>
+
+                    <select name="location" id="location" data-mini="true">
+                            <option value="None">Location</option>
+                            <option value="IIUM">IIUM CAC</option>
+                            <option value="Dewan Titiwangsa">Dewan Titiwangsa</option>
+                            <option value="Dewan Ampang">Dewan Ampang</option>
+                        </select><br>
+
+                        <div class="ui-grid-a">
+                            <div class="ui-block-a"><input type="reset" id="cancel" data-mini="true" value="Cancel"></div>
+                            <div class="ui-block-b"><input type="submit" id="submit" data-mini="true" value="Submit"></div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+            <div data-role="footer">
+                    <div class="ui-field-contain" align="center">
+                        <h4>Dachi App</h4>
+                    </div>
+                </div>
+</div>
+
+        <!-- Start of Student Details page -->
+        <div data-role="page" id="details">
+
+            <div data-role="header">
+                <a href="#schedule" class="ui-btn ui-icon-back ui-btn-icon-left">Back</a>
+
+                <h1>Student Details</h1>
+            </div>
+            <div role="main" class="ui-content">
+                <div class="ui-field-contain" align="center">
+                    <form id="deleterecord">
+                        
+                        <ul data-role="listview" id="studentdetails" data-theme="a"></ul>
+                        <input type="hidden" id="studentID" name="studentID" value="">
+                        <br>
+                        <br>
+                        <div class="ui-grid-a">
+                            <div class="ui-block-a"><input type="submit" id="delete" data-mini="true" value="Delete"></div>
+                        </div>
+                    
+                    </form>
+                   
+                </div>
+            </div>
+            <div data-role="footer">
+                    <div class="ui-field-contain" align="center">
+                        <h4>Dachi App</h4>
+                    </div>
+                </div>
+        </div>
+
+        <!-- Log out page-->
+        <div data-role="page" id="signout">
+                <div data-role="header">
+                        <a href="#home" class="ui-btn ui-icon-home ui-btn-icon-left">Home</a>
+        
+                            <h1>Sign Out</h1>
+                    </div>
+
+                <div role="main" class="ui-content">
+            
+                <h4>Do you want to log out?</h4>
+                <br>
+                <a href="#" id="signout" class="ui-btn ui-mini ui-btn-inline ui-corner-all ui-btn-b">Yes</a>
+          
+            </div>
+        </div>
+        
+
+        <!-- App Initialization -->
+        <!-- jQuery Mobile needs a trigger button to execute Javascript code -->
+        <script type="text/javascript" src="js/index.js"></script>
+
+        <!-- jQuery Cross Scripting for Web Hosting -->
+        <script type="text/javascript">
+            $(document).bind("mobileinit", function() { $.support.cors = true; $.mobile.allowCrossDomainPages = true; });
+        </script>
+    
+    </body>
+</html>

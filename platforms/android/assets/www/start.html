@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Security-Policy" content="default-src'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+        <meta name="format-detection" content="telephone=no">
+        <meta charset="UTF-8" />
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Cordova API -->
+        <script type="text/javascript" src="cordova.js"></script>
+
+        <!-- jQuery Mobile stylesheets -->
+        <link href="jquerymobile/jquery.mobile-1.4.5.css" rel="stylesheet" type="text/css"/>
+
+        <!-- jQuery library -->
+        <script type="text/javascript" src="jquerymobile/demos/js/jquery.js"></script>
+
+        <!-- jQuery Mobile library -->
+        <script type="text/javascript" src="jquerymobile/demos/js/jquery.mobile-1.4.5.js"></script>
+
+        <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
+        
+        <style type="text/css">
+		.ui-page {
+    	background: transparent url(https://mobileapp12.000webhostapp.com/background.png);
+		}
+		</style>
+
+        
+    </head>
+    <body>
+            <!-- Start page -->
+            <div data-role="page" id="start">
+        
+                    <div data-role="header">
+
+                            <h1>Dachi App</h1>
+
+                    </div>
+              
+        
+                    <div role="main" class="ui-content">
+                            <a href="#log" class="ui-btn ui-icon-alert ui-btn-icon-left">Log In</a> 
+                            <br>
+                            <a href="#reg" class="ui-btn ui-icon-check ui-btn-icon-left">Sign Up</a> 
+                            <br>
+                    </div>
+        
+
+                 
+                </div>
+
+            <!-- Login Page -->
+            <div data-role="page" id="log">
+                    <div data-role="header">
+                            <a href="#start" class="ui-btn ui-icon-back ui-btn-icon-left">Back</a>
+                            <h1>Log In</h1>
+                    </div>
+        
+                    <div role="main" class="ui-content">
+                        <div class="ui-field-contain" align="center">
+                            <form id="masuk">
+                                    <input type="text" data-clear-btn="true" data-mini="true" name="nama" id="nama" value="" placeholder="User Name:">
+                                    <br>
+                                    <input type="password" data-clear-btn="true" data-mini="true" name="katakunci" id="katakunci" value="" placeholder="Password:">
+                                    <div class="ui-grid-a">
+                                        <div class="ui-block-a"><input type="reset" id="cancel" data-mini="true" value="Cancel"></div>
+                                        <div class="ui-block-b"><input type="submit" id="submit" data-mini="true" value="Submit"></div>
+                                    </div>
+                                </form>
+                        </div>
+                    </div>
+                    <div data-role="footer">
+                            <div class="ui-field-contain" align="center">
+                                <h4>Dachi App</h4>
+                            </div>
+                        </div>
+        </div>
+
+        <!-- Sign Up Page -->
+        <div data-role="page" id="reg">
+                <div data-role="header">
+                        <a href="#start" class="ui-btn ui-icon-back ui-btn-icon-left">Back</a>
+    
+                        <h1>Sign Up</h1>
+                </div>
+    
+                <div role="main" class="ui-content">
+                    <div class="ui-field-contain" align="center">
+                        <form id="register">
+                                
+                                <a href="#" id="takePicture" class="ui-btn ui-corner-all ui-btn-icon-left ui-icon-camera" data-icon="camera">Take picture</a> 
+
+                                <a href="#" id="getPicture" class="ui-btn ui-corner-all ui-btn-
+                                icon-left ui-icon-grid" data-icon="grid">Get Picture</a>
+
+                                <div ="container">
+                                        <img id="imageView" style="width: 50%;"></img>
+                                        
+                                </div>
+
+                            <br>
+                            <input type="text" data-clear-btn="true" data-mini="true" name="username" id="username" value="" placeholder="User Name:">
+                            <br>
+                            <input type="password" data-clear-btn="true" data-mini="true" name="passwor" id="passwor" value="" placeholder="Password:">
+                            <br>
+                            <input type="text" data-clear-btn="true" data-mini="true" name="email" id="email" value="" placeholder="Email:">
+                            <br>
+                            <select name="belt" id="belt" data-mini="true">
+                                    <option value="None">Belt</option>
+                                    <option value="yellow">Yellow</option>
+                                    <option value="green">Green</option>
+                                    <option value="blue">Blue</option>
+                                    <option value="red">Red</option>
+                                    <option value="black">Black</option>
+                                        
+                                </select>
+
+                            <div class="ui-grid-a">
+                                <div class="ui-block-a"><input type="reset" id="cancel" data-mini="true" value="Cancel"></div>
+                                <div class="ui-block-b"><input type="submit" id="submit" data-mini="true" value="Submit"></div>
+                            </div>
+    
+                        </form>
+                    </div>
+                </div>
+                <div data-role="footer">
+                        <div class="ui-field-contain" align="center">
+                            <h4>Dachi App</h4>
+                        </div>
+                    </div>
+    </div>
+
+           
+
+        <!-- App Initialization -->
+        <!-- jQuery Mobile needs a trigger button to execute Javascript code -->
+        <script type="text/javascript" src="js/login.js"></script>
+        
+
+
+        <!-- jQuery Cross Scripting for Web Hosting -->
+        <script type="text/javascript">
+            $(document).bind("mobileinit", function() { $.support.cors = true; $.mobile.allowCrossDomainPages = true; });
+        </script>
+    </body>
+</html>
